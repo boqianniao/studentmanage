@@ -1,0 +1,42 @@
+.root {
+    -fx-font-family: "Microsoft YaHei";
+    -fx-font-size: 14px;
+}
+
+.button {
+    -fx-background-radius: 5;
+    -fx-padding: 5 10 5 10;
+}
+
+.search-box {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1 0 0 0;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 5;
+}
+
+.table-view .table-cell {
+    -fx-alignment: center;
+    -fx-padding: 5;
+}
+
+.menu-bar {
+    -fx-background-color: #f8f8f8;
+}
+
+.tool-bar {
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 5;
+}
+
+.tooltip {
+    -fx-font-size: 12px;
+}

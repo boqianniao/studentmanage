@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.studentmanage.controller.AdvancedSearchController"
+            prefWidth="400.0">
+
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="学号:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="studentIdField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="姓名:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="性别:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="genderComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value=""/>
+                        <String fx:value="男"/>
+                        <String fx:value="女"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Label text="班级:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="classNameField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        </GridPane>
+    </content>
+
+    <ButtonType fx:constant="OK"/>
+    <ButtonType fx:constant="CANCEL"/>
+</DialogPane>

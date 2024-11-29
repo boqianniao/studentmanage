@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.studentmanage.controller.MainController"
+            prefHeight="600.0" prefWidth="800.0"
+            stylesheets="@../css/style.css">
+
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="文件">
+                    <MenuItem text="保存数据" onAction="#handleSave"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="退出" onAction="#handleExit"/>
+                </Menu>
+                <Menu text="学生管理">
+                    <MenuItem text="添加学生" onAction="#showAddStudent"/>
+                    <MenuItem text="修改学生" onAction="#showEditStudent"/>
+                    <MenuItem text="删除学生" onAction="#showDeleteStudent"/>
+                </Menu>
+                <Menu text="查询统计">
+                    <MenuItem text="按学号查询" onAction="#searchByStudentId"/>
+                    <MenuItem text="高级查询" onAction="#showAdvancedSearch"/>
+                    <MenuItem text="班级统计" onAction="#showClassStatistics"/>
+                </Menu>
+            </MenuBar>
+
+            <ToolBar>
+                <Button text="添加" onAction="#showAddStudent">
+                    <tooltip>
+                        <Tooltip text="添加新学生"/>
+                    </tooltip>
+                </Button>
+                <Button text="修改" onAction="#showEditStudent">
+                    <tooltip>
+                        <Tooltip text="修改选中的学生信息"/>
+                    </tooltip>
+                </Button>
+                <Button text="删除" onAction="#showDeleteStudent">
+                    <tooltip>
+                        <Tooltip text="删除选中的学生"/>
+                    </tooltip>
+                </Button>
+                <Separator orientation="VERTICAL"/>
+                <Button text="刷新" onAction="#refreshTable">
+                    <tooltip>
+                        <Tooltip text="刷新学生列表"/>
+                    </tooltip>
+                </Button>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="studentIdColumn" text="学号" prefWidth="100"/>
+                <TableColumn fx:id="nameColumn" text="姓名" prefWidth="80"/>
+                <TableColumn fx:id="genderColumn" text="性别" prefWidth="60"/>
+                <TableColumn fx:id="idCardColumn" text="身份证号" prefWidth="150"/>
+                <TableColumn fx:id="birthdayColumn" text="出生日期" prefWidth="100"/>
+                <TableColumn fx:id="classNameColumn" text="班级" prefWidth="100"/>
+                <TableColumn fx:id="phoneColumn" text="联系电话" prefWidth="120"/>
+            </columns>
+            <placeholder>
+                <Label text="暂无学生数据"/>
+            </placeholder>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" styleClass="search-box">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <ComboBox fx:id="searchTypeComboBox" prefWidth="100">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="学号"/>
+                        <String fx:value="姓名"/>
+                        <String fx:value="班级"/>
+                    </FXCollections>
+                </items>
+                <value>
+                    <String fx:value="学号"/>
+                </value>
+            </ComboBox>
+            <TextField fx:id="searchField" promptText="请输入搜索关键词" HBox.hgrow="ALWAYS"/>
+            <Button text="搜索" onAction="#handleSearch"/>
+            <Button text="排序" onAction="#handleSort"/>
+            <Label fx:id="totalCountLabel" text="总人数：0"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
