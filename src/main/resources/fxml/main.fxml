@@ -62,7 +62,7 @@
         <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
             <columns>
                 <TableColumn fx:id="studentIdColumn" text="学号" prefWidth="100"/>
-                <TableColumn fx:id="nameColumn" text="姓名" prefWidth="80"/>
+                <TableColumn fx:id="nameColumn" text="姓名"/>
                 <TableColumn fx:id="genderColumn" text="性别" prefWidth="60"/>
                 <TableColumn fx:id="idCardColumn" text="身份证号" prefWidth="150"/>
                 <TableColumn fx:id="birthdayColumn" text="出生日期" prefWidth="100"/>

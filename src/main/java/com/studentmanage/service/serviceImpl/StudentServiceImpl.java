@@ -5,7 +5,6 @@ import com.studentmanage.controller.ClassStatisticsController;
 import com.studentmanage.entity.Student;
 import com.studentmanage.mapper.StudentMapper;
 import com.studentmanage.service.StudentService;
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
